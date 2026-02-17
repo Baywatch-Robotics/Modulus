@@ -17,6 +17,7 @@ import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/multi_color_vi
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/number_bar.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/number_slider.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/radial_gauge.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/rebuilt_period_clock.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/single_color_view.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/text_display.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.dart';
@@ -199,6 +200,7 @@ class SingleTopicNTWidgetModel extends NTWidgetModel {
         RadialGaugeWidget.widgetType,
         GraphWidget.widgetType,
         MatchTimeWidget.widgetType,
+          RebuiltPeriodClockModel.widgetType,
       ]);
     }
 

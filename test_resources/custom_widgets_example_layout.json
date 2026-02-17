@@ -1,0 +1,45 @@
+{
+  "version": 1.0,
+  "grid_size": 128,
+  "tabs": [
+    {
+      "name": "Custom Widgets",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Interactive Pass Target Field",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 384.0,
+            "height": 256.0,
+            "type": "Interactive Pass Target Field",
+            "properties": {
+              "topic": "/SmartDashboard",
+              "period": 0.033,
+              "custom_schema_version": 1,
+              "show_labels": true,
+              "alliance_oriented": true
+            }
+          },
+          {
+            "title": "Rebuilt Period Clock",
+            "x": 384.0,
+            "y": 0.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Rebuilt Period Clock",
+            "properties": {
+              "topic": "/SmartDashboard/MatchTime",
+              "period": 0.033,
+              "data_type": "double",
+              "custom_schema_version": 1,
+              "auto_winner_red": true,
+              "auto_winner_configured": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

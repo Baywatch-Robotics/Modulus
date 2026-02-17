@@ -73,6 +73,7 @@ void main() {
         'Voltage View',
         'Radial Gauge',
         'Match Time',
+        'Rebuilt Period Clock',
         'Large Text Display',
       ]),
     );
@@ -111,6 +112,7 @@ void main() {
         'Voltage View',
         'Radial Gauge',
         'Match Time',
+        'Rebuilt Period Clock',
         'Large Text Display',
       ]),
     );

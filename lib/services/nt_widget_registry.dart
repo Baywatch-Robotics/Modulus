@@ -20,6 +20,7 @@ import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/encoder_widget.
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/field_widget.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/fms_info.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/gyro.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/interactive_pass_target_field.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/motor_controller.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/network_alerts.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/pid_controller.dart';
@@ -41,6 +42,7 @@ import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/multi_color_vi
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/number_bar.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/number_slider.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/radial_gauge.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/rebuilt_period_clock.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/single_color_view.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/text_display.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.dart';
@@ -120,6 +122,16 @@ class NTWidgetRegistry {
       model: MatchTimeModel.new,
       widget: MatchTimeWidget.new,
       fromJson: MatchTimeModel.fromJson,
+    );
+
+    registerSingleTopic(
+      name: RebuiltPeriodClockModel.widgetType,
+      model: RebuiltPeriodClockModel.new,
+      widget: RebuiltPeriodClockWidget.new,
+      fromJson: RebuiltPeriodClockModel.fromJson,
+      minHeight: _normalSize,
+      minWidth: _normalSize * 1.5,
+      defaultWidth: 2,
     );
 
     registerSingleTopic(
@@ -276,6 +288,17 @@ class NTWidgetRegistry {
       minWidth: _normalSize * 2,
       minHeight: _normalSize * 2,
       defaultWidth: 2,
+      defaultHeight: 2,
+    );
+
+    registerMultiTopic(
+      name: InteractivePassTargetFieldModel.widgetType,
+      model: InteractivePassTargetFieldModel.new,
+      widget: InteractivePassTargetFieldWidget.new,
+      fromJson: InteractivePassTargetFieldModel.fromJson,
+      minWidth: _normalSize * 2,
+      minHeight: _normalSize * 2,
+      defaultWidth: 3,
       defaultHeight: 2,
     );
 

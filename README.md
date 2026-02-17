@@ -21,6 +21,14 @@ Elastic is a simple and modern FRC dashboard made by Nadav from FRC Team 353. It
 ## Documentation
 View the online documentation [here](https://frc-elastic.gitbook.io/docs)
 
+## Custom Widgets (Fork)
+
+This fork adds two custom widgets:
+* `Interactive Pass Target Field` for A/B pass-target placement, inch↔meter mirroring, and alliance-oriented field view
+* `Rebuilt Period Clock` for Rebuilt timeline period display and owner-color clock logic
+
+An example layout containing both custom widgets is available at [test_resources/custom_widgets_example_layout.json](test_resources/custom_widgets_example_layout.json).
+
 ## Building and Contributing
 View the instructions for building code and making contributions to the project in the [CONTRIBUTING.md](CONTRIBUTING.md) file
 
