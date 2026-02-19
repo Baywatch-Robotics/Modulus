@@ -562,9 +562,8 @@ class _InteractivePassTargetFieldViewState
     super.dispose();
   }
 
-  bool _matchesKey(LogicalKeyboardKey eventKey, LogicalKeyboardKey wantedKey) {
-    return eventKey.keyId == wantedKey.keyId;
-  }
+  bool _matchesKey(LogicalKeyboardKey eventKey, LogicalKeyboardKey wantedKey) =>
+      eventKey.keyId == wantedKey.keyId;
 
   KeyEventResult _onKey(FocusNode node, KeyEvent event) {
     if (event is! KeyDownEvent || _hoverMeters == null) {
@@ -658,8 +657,7 @@ class _InteractivePassTargetFieldViewState
     required String label,
     required Color color,
     required Offset localPosition,
-  }) {
-    return Positioned(
+  }) => Positioned(
       left: localPosition.dx - 10,
       top: localPosition.dy - 10,
       child: Container(
@@ -680,19 +678,15 @@ class _InteractivePassTargetFieldViewState
             : null,
       ),
     );
-  }
 
   Widget _zInput({
     required String label,
     required double initial,
     required ValueChanged<double> onSubmitted,
-  }) {
-    final controller = TextEditingController(text: initial.toStringAsFixed(3));
-
-    return SizedBox(
+  }) => SizedBox(
       width: 106,
       child: TextField(
-        controller: controller,
+        controller: TextEditingController(text: initial.toStringAsFixed(3)),
         textAlign: TextAlign.center,
         style: Theme.of(context).textTheme.bodySmall,
         decoration: InputDecoration(
@@ -713,11 +707,9 @@ class _InteractivePassTargetFieldViewState
         },
       ),
     );
-  }
 
   @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
+  Widget build(BuildContext context) => LayoutBuilder(
       builder: (context, constraints) {
         final size = Size(constraints.maxWidth, constraints.maxHeight);
         final rect = _fieldRect(size);
@@ -840,5 +832,4 @@ class _InteractivePassTargetFieldViewState
         );
       },
     );
-  }
 }
