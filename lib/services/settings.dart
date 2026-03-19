@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flex_seed_scheme/flex_seed_scheme.dart';
 import 'package:logger/logger.dart';
 
-import 'package:elastic_dashboard/services/ip_address_util.dart';
+import 'package:modulus/services/ip_address_util.dart';
 
 extension LogLevelUtil on Level {
   String get levelName => switch (this) {
@@ -20,8 +20,10 @@ extension LogLevelUtil on Level {
 }
 
 class Settings {
+  static const String githubOwner = 'Baywatch-Robotics';
+  static const String githubRepo = 'Modulus';
   static const String repositoryLink =
-      'https://github.com/Gold872/elastic_dashboard';
+      'https://github.com/$githubOwner/$githubRepo';
   static const String releasesLink = '$repositoryLink/releases/latest';
 
   // window_manager doesn't support drag disable/maximize

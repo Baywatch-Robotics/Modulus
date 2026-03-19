@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:dot_cast/dot_cast.dart';
 import 'package:provider/provider.dart';
 
-import 'package:elastic_dashboard/services/nt4_client.dart';
-import 'package:elastic_dashboard/widgets/dialog_widgets/dialog_toggle_switch.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/nt_widget.dart';
+import 'package:modulus/services/nt4_client.dart';
+import 'package:modulus/widgets/gesture/repeat_press_gesture.dart';
+import 'package:modulus/widgets/dialog_widgets/dialog_toggle_switch.dart';
+import 'package:modulus/widgets/nt_widgets/nt_widget.dart';
 
 class CommandModel extends MultiTopicNTWidgetModel {
   @override
@@ -43,15 +44,26 @@ class CommandModel extends MultiTopicNTWidgetModel {
     refresh();
   }
 
+  bool _holdToRepeat = false;
+
+  bool get holdToRepeat => _holdToRepeat;
+
+  set holdToRepeat(bool value) {
+    _holdToRepeat = value;
+    refresh();
+  }
+
   CommandModel({
     required super.ntConnection,
     required super.preferences,
     required super.topic,
     bool showType = true,
     bool maximizeButtonSpace = false,
+    bool holdToRepeat = false,
     super.period,
   }) : _showType = showType,
        _maximizeButtonSpace = maximizeButtonSpace,
+       _holdToRepeat = holdToRepeat,
        super();
 
   CommandModel.fromJson({
@@ -62,6 +74,7 @@ class CommandModel extends MultiTopicNTWidgetModel {
     _showType = tryCast(jsonData['show_type']) ?? _showType;
     _maximizeButtonSpace =
         tryCast(jsonData['maximize_button_space']) ?? _maximizeButtonSpace;
+    _holdToRepeat = tryCast(jsonData['hold_to_repeat']) ?? _holdToRepeat;
   }
 
   @override
@@ -85,6 +98,7 @@ class CommandModel extends MultiTopicNTWidgetModel {
     ...super.toJson(),
     'show_type': showType,
     'maximize_button_space': maximizeButtonSpace,
+    'hold_to_repeat': holdToRepeat,
   };
 
   @override
@@ -109,6 +123,15 @@ class CommandModel extends MultiTopicNTWidgetModel {
             },
           ),
         ),
+        Flexible(
+          child: DialogToggleSwitch(
+            label: 'Hold To Repeat',
+            initialValue: _holdToRepeat,
+            onToggle: (value) {
+              holdToRepeat = value;
+            },
+          ),
+        ),
       ],
     ),
   ];
@@ -127,28 +150,30 @@ class CommandWidget extends NTWidget {
 
     ThemeData theme = Theme.of(context);
 
-    Widget commandButton = GestureDetector(
-      onTapUp: (_) {
-        bool publishTopic = model.runningTopic == null;
+    void triggerCommand() {
+      bool publishTopic = model.runningTopic == null;
 
-        model.runningTopic ??= model.ntConnection.getTopicFromName(
-          model.runningTopicName,
-        );
+      model.runningTopic ??= model.ntConnection.getTopicFromName(
+        model.runningTopicName,
+      );
 
-        if (model.runningTopic == null) {
-          return;
-        }
+      if (model.runningTopic == null) {
+        return;
+      }
 
-        if (publishTopic) {
-          model.ntConnection.publishTopic(model.runningTopic!);
-        }
+      if (publishTopic) {
+        model.ntConnection.publishTopic(model.runningTopic!);
+      }
 
-        // Prevents widget from locking up if double pressed fast enough
-        bool running =
-            model.runningSubscription.value?.tryCast<bool>() ?? false;
+      // Prevents widget from locking up if double pressed fast enough
+      bool running = model.runningSubscription.value?.tryCast<bool>() ?? false;
 
-        model.ntConnection.updateDataFromTopic(model.runningTopic!, !running);
-      },
+      model.ntConnection.updateDataFromTopic(model.runningTopic!, !running);
+    }
+
+    Widget commandButton = RepeatPressGesture(
+      onPressed: triggerCommand,
+      repeatEnabled: model.holdToRepeat,
       child: ValueListenableBuilder(
         valueListenable: model.runningSubscription,
         builder: (context, data, child) {

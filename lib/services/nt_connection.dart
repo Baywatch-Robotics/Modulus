@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 
-import 'package:elastic_dashboard/services/ds_interop.dart';
-import 'package:elastic_dashboard/services/nt4_client.dart';
-import 'package:elastic_dashboard/services/nt4_type.dart';
-import 'package:elastic_dashboard/services/struct_schemas/nt_struct.dart';
+import 'package:modulus/services/ds_interop.dart';
+import 'package:modulus/services/nt4_client.dart';
+import 'package:modulus/services/nt4_type.dart';
+import 'package:modulus/services/struct_schemas/nt_struct.dart';
 
 typedef SubscriptionIdentification = ({
   String topic,

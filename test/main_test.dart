@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/main.dart';
-import 'package:elastic_dashboard/services/field_images.dart';
-import 'package:elastic_dashboard/services/settings.dart';
+import 'package:modulus/main.dart';
+import 'package:modulus/services/field_images.dart';
+import 'package:modulus/services/settings.dart';
 import 'test_util.dart';
 
 void main() {

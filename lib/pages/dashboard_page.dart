@@ -14,32 +14,32 @@ import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:elastic_dashboard/pages/dashboard/add_widget_dialog.dart';
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_footer.dart';
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_layouts.dart';
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_notifications.dart';
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_settings.dart';
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_tabs.dart';
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_window.dart';
-import 'package:elastic_dashboard/services/app_distributor.dart';
-import 'package:elastic_dashboard/services/elastic_layout_downloader.dart';
-import 'package:elastic_dashboard/services/elasticlib_listener.dart';
-import 'package:elastic_dashboard/services/hotkey_manager.dart';
-import 'package:elastic_dashboard/services/ip_address_util.dart';
-import 'package:elastic_dashboard/services/log.dart';
-import 'package:elastic_dashboard/services/nt_connection.dart';
-import 'package:elastic_dashboard/services/settings.dart';
-import 'package:elastic_dashboard/services/update_checker.dart';
-import 'package:elastic_dashboard/util/tab_data.dart';
-import 'package:elastic_dashboard/util/test_utils.dart';
-import 'package:elastic_dashboard/widgets/custom_appbar.dart';
-import 'package:elastic_dashboard/widgets/editable_tab_bar.dart';
-import 'package:elastic_dashboard/widgets/tab_grid.dart';
+import 'package:modulus/pages/dashboard/add_widget_dialog.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_footer.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_layouts.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_notifications.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_settings.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_tabs.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_window.dart';
+import 'package:modulus/services/app_distributor.dart';
+import 'package:modulus/services/elastic_layout_downloader.dart';
+import 'package:modulus/services/elasticlib_listener.dart';
+import 'package:modulus/services/hotkey_manager.dart';
+import 'package:modulus/services/ip_address_util.dart';
+import 'package:modulus/services/log.dart';
+import 'package:modulus/services/nt_connection.dart';
+import 'package:modulus/services/settings.dart';
+import 'package:modulus/services/update_checker.dart';
+import 'package:modulus/util/tab_data.dart';
+import 'package:modulus/util/test_utils.dart';
+import 'package:modulus/widgets/custom_appbar.dart';
+import 'package:modulus/widgets/editable_tab_bar.dart';
+import 'package:modulus/widgets/tab_grid.dart';
 
-import 'package:elastic_dashboard/util/stub/unload_handler_stub.dart'
-    if (dart.library.js_interop) 'package:elastic_dashboard/util/unload_handler.dart';
+import 'package:modulus/util/stub/unload_handler_stub.dart'
+    if (dart.library.js_interop) 'package:modulus/util/unload_handler.dart';
 import 'package:window_manager/window_manager.dart'
-    if (dart.library.js_interop) 'package:elastic_dashboard/util/stub/window_stub.dart';
+    if (dart.library.js_interop) 'package:modulus/util/stub/window_stub.dart';
 
 enum LayoutDownloadMode {
   overwrite(
@@ -327,7 +327,7 @@ abstract class DashboardPageViewModel extends ChangeNotifier {
     } else if (updateResponse.onLatestVersion && notifyIfLatest) {
       showInfoNotification(
         title: 'No Updates Available',
-        message: 'You are running on the latest version of Elastic',
+        message: 'You are running on the latest version of Modulus',
         width: 350,
         height: 75,
       );
@@ -385,25 +385,25 @@ abstract class DashboardPageViewModel extends ChangeNotifier {
         Container(
           constraints: const BoxConstraints(maxWidth: 353),
           child: const Text(
-            'Elastic was created by Nadav from FRC Team 353, the POBots, in the Summer of 2023.\n',
+            'Modulus was created by Nadav from FRC Team 353, the POBots, in the Summer of 2023.\n',
           ),
         ),
         Container(
           constraints: const BoxConstraints(maxWidth: 353),
           child: const Text(
-            'The goal of Elastic is to have the essential features needed for a driver dashboard, but with an elegant and modern display and a focus on customizability and performance.\n',
+            'The goal of Modulus is to have the essential features needed for a driver dashboard, but with an elegant and modern display and a focus on customizability and performance.\n',
           ),
         ),
         Container(
           constraints: const BoxConstraints(maxWidth: 353),
           child: const Text(
-            'Elastic is an ongoing project; if you have any ideas, feedback, or bug reports, feel free to share them on the Github page!\n',
+            'Modulus is an ongoing project; if you have any ideas, feedback, or bug reports, feel free to share them on the Github page!\n',
           ),
         ),
         Container(
           constraints: const BoxConstraints(maxWidth: 353),
           child: const Text(
-            'Elastic was built with inspiration from Shuffleboard and AdvantageScope, along with significant help from FRC and WPILib developers.\n',
+            'Modulus was built with inspiration from Shuffleboard and AdvantageScope, along with significant help from FRC and WPILib developers.\n',
           ),
         ),
         Row(

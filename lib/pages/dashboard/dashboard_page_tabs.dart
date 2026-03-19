@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:elastic_dashboard/pages/dashboard_page.dart';
-import 'package:elastic_dashboard/services/log.dart';
-import 'package:elastic_dashboard/services/settings.dart';
-import 'package:elastic_dashboard/util/tab_data.dart';
-import 'package:elastic_dashboard/widgets/tab_grid.dart';
+import 'package:modulus/pages/dashboard_page.dart';
+import 'package:modulus/services/log.dart';
+import 'package:modulus/services/settings.dart';
+import 'package:modulus/util/tab_data.dart';
+import 'package:modulus/widgets/tab_grid.dart';
 
 mixin DashboardPageTabs on DashboardPageViewModel {
   @override

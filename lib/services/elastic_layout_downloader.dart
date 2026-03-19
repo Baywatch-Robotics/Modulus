@@ -4,8 +4,8 @@ import 'package:dot_cast/dot_cast.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/services/nt_connection.dart';
-import 'package:elastic_dashboard/services/settings.dart';
+import 'package:modulus/services/nt_connection.dart';
+import 'package:modulus/services/settings.dart';
 
 typedef LayoutDownloadResponse<T> = ({bool successful, T data});
 

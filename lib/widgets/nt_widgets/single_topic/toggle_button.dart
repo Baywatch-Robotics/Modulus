@@ -3,7 +3,78 @@ import 'package:flutter/material.dart';
 import 'package:dot_cast/dot_cast.dart';
 import 'package:provider/provider.dart';
 
-import 'package:elastic_dashboard/widgets/nt_widgets/nt_widget.dart';
+import 'package:modulus/widgets/dialog_widgets/dialog_toggle_switch.dart';
+import 'package:modulus/widgets/gesture/repeat_press_gesture.dart';
+import 'package:modulus/widgets/nt_widgets/nt_widget.dart';
+
+class ToggleButtonModel extends SingleTopicNTWidgetModel {
+  @override
+  String type = ToggleButton.widgetType;
+
+  bool _holdToRepeat = false;
+
+  bool get holdToRepeat => _holdToRepeat;
+
+  set holdToRepeat(bool value) {
+    _holdToRepeat = value;
+    refresh();
+  }
+
+  ToggleButtonModel({
+    required super.ntConnection,
+    required super.preferences,
+    required super.topic,
+    bool holdToRepeat = false,
+    super.ntStructMeta,
+    super.dataType,
+    super.period,
+  }) : _holdToRepeat = holdToRepeat,
+       super();
+
+  ToggleButtonModel.fromJson({
+    required super.ntConnection,
+    required super.preferences,
+    required Map<String, dynamic> jsonData,
+  }) : super.fromJson(jsonData: jsonData) {
+    _holdToRepeat = tryCast(jsonData['hold_to_repeat']) ?? _holdToRepeat;
+  }
+
+  @override
+  Map<String, dynamic> toJson() => {
+    ...super.toJson(),
+    'hold_to_repeat': holdToRepeat,
+  };
+
+  @override
+  List<Widget> getEditProperties(BuildContext context) => [
+    DialogToggleSwitch(
+      label: 'Hold To Repeat',
+      initialValue: _holdToRepeat,
+      onToggle: (value) {
+        holdToRepeat = value;
+      },
+    ),
+  ];
+
+  void triggerToggle() {
+    bool currentValue = tryCast<bool>(subscription?.value) ?? false;
+
+    bool publishTopic =
+        ntTopic == null || !ntConnection.isTopicPublished(ntTopic);
+
+    createTopicIfNull();
+
+    if (ntTopic == null) {
+      return;
+    }
+
+    if (publishTopic) {
+      ntConnection.publishTopic(ntTopic!);
+    }
+
+    ntConnection.updateDataFromTopic(ntTopic!, !currentValue);
+  }
+}
 
 class ToggleButton extends NTWidget {
   static const String widgetType = 'Toggle Button';
@@ -12,7 +83,7 @@ class ToggleButton extends NTWidget {
 
   @override
   Widget build(BuildContext context) {
-    SingleTopicNTWidgetModel model = cast(context.watch<NTWidgetModel>());
+    ToggleButtonModel model = cast(context.watch<NTWidgetModel>());
 
     return ValueListenableBuilder(
       valueListenable: model.subscription!,
@@ -27,26 +98,13 @@ class ToggleButton extends NTWidget {
 
         ThemeData theme = Theme.of(context);
 
-        return GestureDetector(
-          onTapUp: (_) {
+        return RepeatPressGesture(
+          onPressed: () {
             if (model.ntStructMeta != null) return;
 
-            bool publishTopic =
-                model.ntTopic == null ||
-                !model.ntConnection.isTopicPublished(model.ntTopic);
-
-            model.createTopicIfNull();
-
-            if (model.ntTopic == null) {
-              return;
-            }
-
-            if (publishTopic) {
-              model.ntConnection.publishTopic(model.ntTopic!);
-            }
-
-            model.ntConnection.updateDataFromTopic(model.ntTopic!, !value);
+            model.triggerToggle();
           },
+          repeatEnabled: model.holdToRepeat,
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: buttonSize.width * 0.01,

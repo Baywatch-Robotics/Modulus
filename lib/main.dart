@@ -12,20 +12,20 @@ import 'package:logger/logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/pages/dashboard_page.dart';
-import 'package:elastic_dashboard/services/app_distributor.dart';
-import 'package:elastic_dashboard/services/field_images.dart';
-import 'package:elastic_dashboard/services/log.dart';
-import 'package:elastic_dashboard/services/nt_connection.dart';
-import 'package:elastic_dashboard/services/nt_widget_registry.dart';
-import 'package:elastic_dashboard/services/settings.dart';
+import 'package:modulus/pages/dashboard_page.dart';
+import 'package:modulus/services/app_distributor.dart';
+import 'package:modulus/services/field_images.dart';
+import 'package:modulus/services/log.dart';
+import 'package:modulus/services/nt_connection.dart';
+import 'package:modulus/services/nt_widget_registry.dart';
+import 'package:modulus/services/settings.dart';
 
 import 'package:path_provider/path_provider.dart'
-    if (dart.library.js_interop) 'package:elastic_dashboard/util/stub/path_stub.dart';
+    if (dart.library.js_interop) 'package:modulus/util/stub/path_stub.dart';
 import 'package:screen_retriever/screen_retriever.dart'
-    if (dart.library.js_interop) 'package:elastic_dashboard/util/stub/screen_stub.dart';
+    if (dart.library.js_interop) 'package:modulus/util/stub/screen_stub.dart';
 import 'package:window_manager/window_manager.dart'
-    if (dart.library.js_interop) 'package:elastic_dashboard/util/stub/window_stub.dart';
+    if (dart.library.js_interop) 'package:modulus/util/stub/window_stub.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

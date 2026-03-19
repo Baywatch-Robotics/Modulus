@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:dot_cast/dot_cast.dart';
 import 'package:provider/provider.dart';
 
-import 'package:elastic_dashboard/services/nt4_client.dart';
-import 'package:elastic_dashboard/services/text_formatter_builder.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/nt_widget.dart';
+import 'package:modulus/services/nt4_client.dart';
+import 'package:modulus/services/text_formatter_builder.dart';
+import 'package:modulus/widgets/nt_widgets/nt_widget.dart';
 
 class PIDControllerModel extends MultiTopicNTWidgetModel {
   @override

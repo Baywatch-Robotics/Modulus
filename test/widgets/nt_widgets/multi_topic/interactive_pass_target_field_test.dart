@@ -2,12 +2,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/services/field_images.dart';
-import 'package:elastic_dashboard/services/nt4_client.dart';
-import 'package:elastic_dashboard/services/nt4_type.dart';
-import 'package:elastic_dashboard/services/nt_connection.dart';
-import 'package:elastic_dashboard/services/nt_widget_registry.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/interactive_pass_target_field.dart';
+import 'package:modulus/services/field_images.dart';
+import 'package:modulus/services/nt4_client.dart';
+import 'package:modulus/services/nt4_type.dart';
+import 'package:modulus/services/nt_connection.dart';
+import 'package:modulus/services/nt_widget_registry.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/interactive_pass_target_field.dart';
 import '../../../test_util.dart';
 
 void main() {

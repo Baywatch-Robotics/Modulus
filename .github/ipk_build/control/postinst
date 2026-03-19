@@ -1,5 +1,5 @@
 #!/bin/sh
-PACKAGE_NAME="elastic_dashboard"
+PACKAGE_NAME="modulus"
 
 echo "Configuring service for $PACKAGE_NAME"
 

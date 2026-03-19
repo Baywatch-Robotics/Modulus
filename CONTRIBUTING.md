@@ -1,20 +1,20 @@
-# Contributing to Elastic
+# Contributing to Modulus
 
-Thank you for contributing to Elastic! We're excited to have you. This is an open-source, community-driven project, and every contribution, whether it's a bug report, a new feature, or a documentation update, is heavily appreciated.
+Thank you for contributing to Modulus! We're excited to have you. This is an open-source, community-driven project, and every contribution, whether it's a bug report, a new feature, or a documentation update, is heavily appreciated.
 
 This document provides a set of guidelines to help you contribute to the project.
 
 ## Ways to Contribute
 
-- **Bug Reports:** If you encounter a bug, please open a [Bug Report Issue](https://github.com/Gold87/elastic_dashboard/issues/new?assignees=&labels=bug&projects=&template=bug_report.md) on the project issue tracker.
-- **Suggesting Enhancements:** If you have an idea for a new feature or an improvement to an existing one, feel free to open a [Feature Request Issue](https://github.com/Gold87/elastic_dashboard/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md).
+- **Bug Reports:** If you encounter a bug, please open a [Bug Report Issue](https://github.com/Baywatch-Robotics/Modulus/issues/new?assignees=&labels=bug&projects=&template=bug_report.md) on the project issue tracker.
+- **Suggesting Enhancements:** If you have an idea for a new feature or an improvement to an existing one, feel free to open a [Feature Request Issue](https://github.com/Baywatch-Robotics/Modulus/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md).
 - **Code Contributions:** If you'd like to fix a bug or implement a feature, please follow the workflow described below.
 
 ## Contribution Workflow
 
 To ensure a standardized process, please follow this development workflow:
 
-1. **Fork the Repository:** Start by [forking the repository](https://github.com/Gold87/elastic_dashboard/fork) to your own GitHub account.
+1. **Fork the Repository:** Start by [forking the repository](https://github.com/Baywatch-Robotics/Modulus/fork) to your own GitHub account.
 2. **Create a Branch:** Create a new branch from `main` in your fork for your changes. Use a descriptive name, such as `fix-connection-error` or `add-new-widget`.
     ```bash
     git checkout -b <your-branch-name>
@@ -25,13 +25,13 @@ To ensure a standardized process, please follow this development workflow:
     ```bash
     git push origin <your-branch-name>
     ```
-6. **Open a Pull Request:** Go to the original Elastic repository and open a pull request from your forked branch. Provide a clear title and a detailed description of your changes, and link any relevant issues.
+6. **Open a Pull Request:** Go to the original Modulus repository and open a pull request from your forked branch. Provide a clear title and a detailed description of your changes, and link any relevant issues.
 
 ## Building from Source
 
 ### Flutter App
 
-Elastic requires Flutter and platform-specific dependencies to run. See the [Flutter documentation](https://docs.flutter.dev/get-started) for installation instructions.
+Modulus requires Flutter and platform-specific dependencies to run. See the [Flutter documentation](https://docs.flutter.dev/get-started) for installation instructions.
 
 Once Flutter is installed, download the package dependencies:
 ```bash
@@ -59,7 +59,7 @@ The `elasticlib` directory contains a small robot code library written in C++, J
 
 ## Running Unit Tests
 
-Elastic uses the [Flutter unit test](https://docs.flutter.dev/testing/overview) library and [Mockito](https://pub.dev/packages/mockito) for unit testing.
+Modulus uses the [Flutter unit test](https://docs.flutter.dev/testing/overview) library and [Mockito](https://pub.dev/packages/mockito) for unit testing.
 
 First, generate the necessary mock classes:
 ```bash
@@ -94,4 +94,4 @@ Before submitting a pull request, please ensure you have completed the following
 
 ## Licensing
 
-By contributing to Elastic, you agree that your contributions will be licensed under the [MIT License](LICENSE) that covers the project.
+By contributing to Modulus, you agree that your contributions will be licensed under the [MIT License](LICENSE) that covers the project.

@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/services/nt4_client.dart';
-import 'package:elastic_dashboard/services/nt4_type.dart';
-import 'package:elastic_dashboard/services/nt_connection.dart';
-import 'package:elastic_dashboard/services/nt_widget_registry.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/rebuilt_period_clock.dart';
+import 'package:modulus/services/nt4_client.dart';
+import 'package:modulus/services/nt4_type.dart';
+import 'package:modulus/services/nt_connection.dart';
+import 'package:modulus/services/nt_widget_registry.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/rebuilt_period_clock.dart';
 import '../../../test_util.dart';
 
 void main() {

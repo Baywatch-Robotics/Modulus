@@ -90,12 +90,10 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.gold872" "\0"
-            VALUE "FileDescription", "elastic" "\0"
-            VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "elastic_dashboard" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 Gold872. All rights reserved." "\0"
-            VALUE "OriginalFilename", "elastic_dashboard.exe" "\0"
-            VALUE "ProductName", "elastic_dashboard" "\0"
+            VALUE "FileDescription", "modulus" "\0"
+            VALUE "InternalName", "modulus" "\0"
+            VALUE "OriginalFilename", "modulus.exe" "\0"
+            VALUE "ProductName", "modulus" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

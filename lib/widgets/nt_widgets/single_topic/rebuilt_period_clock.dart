@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:dot_cast/dot_cast.dart';
 import 'package:provider/provider.dart';
 
-import 'package:elastic_dashboard/widgets/dialog_widgets/dialog_toggle_switch.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/nt_widget.dart';
+import 'package:modulus/widgets/dialog_widgets/dialog_toggle_switch.dart';
+import 'package:modulus/widgets/nt_widgets/nt_widget.dart';
 
 class RebuiltPeriodSegment {
   final String name;

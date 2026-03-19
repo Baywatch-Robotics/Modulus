@@ -3,51 +3,51 @@ import 'package:flutter/material.dart';
 import 'package:dot_cast/dot_cast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/services/log.dart';
-import 'package:elastic_dashboard/services/nt4_client.dart';
-import 'package:elastic_dashboard/services/nt4_type.dart';
-import 'package:elastic_dashboard/services/nt_connection.dart';
-import 'package:elastic_dashboard/services/settings.dart';
-import 'package:elastic_dashboard/widgets/draggable_containers/draggable_widget_container.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/accelerometer.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/basic_swerve_drive.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/camera_stream.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/combo_box_chooser.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/command_scheduler.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/command_widget.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/differential_drive.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/encoder_widget.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/field_widget.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/fms_info.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/gyro.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/interactive_pass_target_field.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/motor_controller.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/network_alerts.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/pid_controller.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/power_distribution.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/profiled_pid_controller.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/relay_widget.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/robot_preferences.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/split_button_chooser.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/subsystem_widget.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/three_axis_accelerometer.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/ultrasonic.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/yagsl_swerve_drive.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/nt_widget.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/boolean_box.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/graph.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/large_text_display.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/match_time.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/multi_color_view.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/number_bar.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/number_slider.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/radial_gauge.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/rebuilt_period_clock.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/single_color_view.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/text_display.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_switch.dart';
-import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/voltage_view.dart';
+import 'package:modulus/services/log.dart';
+import 'package:modulus/services/nt4_client.dart';
+import 'package:modulus/services/nt4_type.dart';
+import 'package:modulus/services/nt_connection.dart';
+import 'package:modulus/services/settings.dart';
+import 'package:modulus/widgets/draggable_containers/draggable_widget_container.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/accelerometer.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/basic_swerve_drive.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/camera_stream.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/combo_box_chooser.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/command_scheduler.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/command_widget.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/differential_drive.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/encoder_widget.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/field_widget.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/fms_info.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/gyro.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/interactive_pass_target_field.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/motor_controller.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/network_alerts.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/pid_controller.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/power_distribution.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/profiled_pid_controller.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/relay_widget.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/robot_preferences.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/split_button_chooser.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/subsystem_widget.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/three_axis_accelerometer.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/ultrasonic.dart';
+import 'package:modulus/widgets/nt_widgets/multi_topic/yagsl_swerve_drive.dart';
+import 'package:modulus/widgets/nt_widgets/nt_widget.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/boolean_box.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/graph.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/large_text_display.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/match_time.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/multi_color_view.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/number_bar.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/number_slider.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/radial_gauge.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/rebuilt_period_clock.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/single_color_view.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/text_display.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/toggle_button.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/toggle_switch.dart';
+import 'package:modulus/widgets/nt_widgets/single_topic/voltage_view.dart';
 
 typedef NTModelJsonProvider<T extends NTWidgetModel> =
     T Function({
@@ -430,6 +430,8 @@ class NTWidgetRegistry {
     registerWithoutModel(
       name: ToggleButton.widgetType,
       widget: ToggleButton.new,
+      model: ToggleButtonModel.new,
+      fromJson: ToggleButtonModel.fromJson,
       minHeight: _normalSize * 0.8,
     );
 
@@ -662,6 +664,8 @@ class NTWidgetRegistry {
     required String name,
     Set<String>? aliases,
     required NTWidgetProvider<WidgetType> widget,
+    NTModelProvider? model,
+    NTModelJsonProvider? fromJson,
     double? minWidth,
     double? minHeight,
     double? defaultWidth,
@@ -669,6 +673,7 @@ class NTWidgetRegistry {
   }) => registerWithAlias(
     names: {name, ...?aliases},
     model:
+        model ??
         ({
           required NTConnection ntConnection,
           required SharedPreferences preferences,
@@ -687,6 +692,7 @@ class NTWidgetRegistry {
         ),
     widget: widget,
     fromJson:
+        fromJson ??
         ({required jsonData, required ntConnection, required preferences}) =>
             SingleTopicNTWidgetModel.createDefaultFromJson(
               ntConnection: ntConnection,

@@ -1,16 +1,16 @@
-# ![Elastic Logo](assets/logos/logo_full.png)
+# ![Modulus Logo](assets/logos/logo_full.png)
 
-[![Elastic](https://github.com/Gold872/elastic_dashboard/actions/workflows/elastic-ci.yml/badge.svg)](https://github.com/Gold872/elastic_dashboard/actions/workflows/elastic-ci.yml) [![codecov](https://codecov.io/gh/Gold872/elastic_dashboard/graph/badge.svg?token=4MQYW8SMQI)](https://codecov.io/gh/Gold872/elastic_dashboard)
+[![Modulus](https://github.com/Baywatch-Robotics/Modulus/actions/workflows/elastic-ci.yml/badge.svg)](https://github.com/Baywatch-Robotics/Modulus/actions/workflows/elastic-ci.yml) [![codecov](https://codecov.io/gh/Baywatch-Robotics/Modulus/graph/badge.svg)](https://codecov.io/gh/Baywatch-Robotics/Modulus)
 
 A simple and modern dashboard for FRC.
 
-Download files can be found [here](https://github.com/Gold872/elastic_dashboard/releases/latest), the supported platforms are Windows, MacOS, Linux, and Web.
+Download files can be found [here](https://github.com/Baywatch-Robotics/Modulus/releases/latest), the supported platforms are Windows, MacOS, Linux, and Web.
 
-Try it in your browser! https://gold872.github.io/elastic_dashboard/
+Try it in your browser! https://baywatch-robotics.github.io/Modulus/
 
 ## About
 
-Elastic is a simple and modern FRC dashboard made by Nadav from FRC Team 353. It is meant to be used behind the glass as a competition driver dashboard, but it can also be used for testing. Some unique features include:
+Modulus is a simple and modern FRC dashboard made by Nadav from FRC Team 353. It is meant to be used behind the glass as a competition driver dashboard, but it can also be used for testing. Some unique features include:
 * Customizable color scheme with over 20 variants
 * Subscription sharing to reduce bandwidth consumption
 * Optimized camera streams which automatically deactivate when not in use
@@ -44,6 +44,6 @@ This dashboard wouldn't have been made without the help and inspiration from the
 
 ## Contributors
 
-<a href="https://github.com/Gold872/elastic_dashboard/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Gold872/elastic_dashboard" />
+<a href="https://github.com/Baywatch-Robotics/Modulus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Baywatch-Robotics/Modulus" />
 </a>

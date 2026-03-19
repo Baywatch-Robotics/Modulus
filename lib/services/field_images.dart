@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 
 import 'package:collection/collection.dart';
 
-import 'package:elastic_dashboard/services/log.dart';
+import 'package:modulus/services/log.dart';
 
 class FieldImages {
   static List<Field> fields = [];

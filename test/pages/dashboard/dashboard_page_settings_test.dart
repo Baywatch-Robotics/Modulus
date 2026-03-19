@@ -4,10 +4,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:elastic_dashboard/pages/dashboard/dashboard_page_settings.dart';
-import 'package:elastic_dashboard/pages/dashboard_page.dart';
-import 'package:elastic_dashboard/services/ip_address_util.dart';
-import 'package:elastic_dashboard/services/settings.dart';
+import 'package:modulus/pages/dashboard/dashboard_page_settings.dart';
+import 'package:modulus/pages/dashboard_page.dart';
+import 'package:modulus/services/ip_address_util.dart';
+import 'package:modulus/services/settings.dart';
 import '../../test_util.dart';
 
 class SettingsDashboardViewModel = DashboardPageViewModel

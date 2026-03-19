@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Elastic
+name: Modulus
 
 on:
   push:
@@ -189,12 +189,12 @@ jobs:
       - name: Zip MacOS Release
         if: ${{ matrix.platform == 'macos' && matrix.wpilib == false }}
         working-directory: ${{ matrix.build-path }}
-        run: zip -r ${{ github.workspace }}/${{ matrix.artifact-file }} elastic_dashboard.app --symlinks
+        run: zip -r ${{ github.workspace }}/${{ matrix.artifact-file }} modulus.app --symlinks
 
       - name: Zip MacOS Release (WPILib)
         if: ${{ matrix.platform == 'macos' && matrix.wpilib }}
         working-directory: ${{ matrix.build-path }}
-        run: tar -zcvf ${{ github.workspace }}/${{ matrix.artifact-file }} elastic_dashboard.app
+        run: tar -zcvf ${{ github.workspace }}/${{ matrix.artifact-file }} modulus.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -207,15 +207,15 @@ jobs:
         if: ${{ matrix.platform == 'macos' && matrix.wpilib == false }}
         uses: L-Super/create-dmg-actions@v1.0.3
         with:
-          dmg_name: ${{ matrix.build-path }}/elastic-setup-macos
-          src_dir: ${{ matrix.build-path }}/elastic_dashboard.app
+          dmg_name: ${{ matrix.build-path }}/modulus-setup-macos
+          src_dir: ${{ matrix.build-path }}/modulus.app
 
       - name: Upload macOS installer
         if: ${{ matrix.platform == 'macos' && matrix.wpilib == false }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact-name }}_installer
-          path: ${{ matrix.build-path }}/elastic-setup-macos.dmg
+          path: ${{ matrix.build-path }}/modulus-setup-macos.dmg
           if-no-files-found: error
 
       - name: Install Inno Setup
@@ -272,27 +272,27 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Elastic-SystemCore
-          path: .github/ipk_build/elastic_dashboard_*.ipk
+          path: .github/ipk_build/modulus_*.ipk
           if-no-files-found: error
 
   github-pages:
     name: "Upload to GitHub Pages"
     runs-on: ubuntu-22.04
-    if: ${{ github.repository == 'Gold872/elastic_dashboard' && github.ref == 'refs/heads/main' }}
+    if: ${{ github.repository == 'Baywatch-Robotics/Modulus' && github.ref == 'refs/heads/main' }}
     needs: [build-web]
     steps:
       - name: Download Web Build
         uses: actions/download-artifact@v4
         with:
-          name: Elastic-Web
+          name: Modulus-Web
 
       - name: Extract Web Build
-        run: unzip Elastic-Web.zip -d Elastic-Web
+        run: unzip Modulus-Web.zip -d Modulus-Web
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v3.0.0
         with:
-          path: Elastic-Web
+          path: Modulus-Web
           retention-days: 31
 
       - name: Deploy to GitHub Pages
@@ -310,15 +310,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts
-          pattern: Elastic-*
+          pattern: Modulus-*
           merge-multiple: true
 
       - name: Rename Files
         working-directory: artifacts
         run: |
           ls -al
-          mv Elastic-Windows.zip Elastic-Windows_portable.zip
-          mv elastic_dashboard_*.ipk Elastic-SystemCore.ipk
+          mv Modulus-Windows.zip Modulus-Windows_portable.zip
+          mv modulus_*.ipk Modulus-SystemCore.ipk
 
       - name: Get Draft Release Info
         id: release_info

@@ -1,7 +1,8 @@
 import 'package:github/github.dart';
 import 'package:version/version.dart';
 
-import 'package:elastic_dashboard/services/log.dart';
+import 'package:modulus/services/log.dart';
+import 'package:modulus/services/settings.dart';
 
 extension on Release {
   Version? getVersion() {
@@ -32,7 +33,7 @@ class UpdateChecker {
 
       final List<Release> releases = await _github.repositories
           .listReleases(
-            RepositorySlug('Gold872', 'elastic_dashboard'),
+            RepositorySlug(Settings.githubOwner, Settings.githubRepo),
           )
           .toList();
 
@@ -79,6 +80,12 @@ class UpdateChecker {
       return UpdateCheckerResponse(
         updateAvailable: updateAvailable,
         latestVersion: latest.toString(),
+        error: false,
+      );
+    } on GitHubError catch (error) {
+      logger.warning('Unable to check for updates: $error');
+      return UpdateCheckerResponse(
+        updateAvailable: false,
         error: false,
       );
     } catch (error) {

@@ -1,8 +1,8 @@
-#define MyAppName "Elastic"
-#define MyAppFolderName "FRC Elastic"
+#define MyAppName "Modulus"
+#define MyAppFolderName "FRC Modulus"
 #define MyAppPublisher "Gold87"
-#define MyAppURL "https://github.com/Gold872/elastic_dashboard/"
-#define MyAppExeName "elastic_dashboard.exe"
+#define MyAppURL "https://github.com/Baywatch-Robotics/Modulus/"
+#define MyAppExeName "modulus.exe"
 #define MyAppSourceDir "build\windows\x64\runner\Release"
 #define MyAppExePath MyAppSourceDir + "\" + MyAppExeName
 #define AppVersionName GetStringFileInfo(MyAppExePath, "ProductVersion")
@@ -35,7 +35,7 @@ LicenseFile=LICENSE
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=build\windows\x64\installer
-OutputBaseFilename=elastic-setup-windows
+OutputBaseFilename=modulus-setup-windows
 SetupIconFile=assets\icon.ico
 Compression=lzma
 SolidCompression=yes
