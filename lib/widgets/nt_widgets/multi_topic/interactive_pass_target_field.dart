@@ -555,6 +555,7 @@ class _InteractivePassTargetFieldViewState
     extends State<_InteractivePassTargetFieldView> {
   final FocusNode _focusNode = FocusNode();
   Offset? _hoverMeters;
+  PassTargetSelection _selectedTarget = PassTargetSelection.targetA;
 
   @override
   void dispose() {
@@ -581,6 +582,15 @@ class _InteractivePassTargetFieldViewState
     }
 
     return KeyEventResult.ignored;
+  }
+
+  void _placeFromLocalPosition(Offset localPosition, Rect fieldRect) {
+    final meters = _localToMeters(localPosition, fieldRect);
+    if (meters == null) {
+      return;
+    }
+
+    widget.model.placeTarget(_selectedTarget, meters);
   }
 
   Rect _fieldRect(Size size) {
@@ -745,6 +755,30 @@ class _InteractivePassTargetFieldViewState
                     ),
                   ),
                 ),
+                Positioned.fromRect(
+                  rect: rect,
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTapDown: (details) {
+                      _placeFromLocalPosition(
+                        details.localPosition + rect.topLeft,
+                        rect,
+                      );
+                    },
+                    onPanStart: (details) {
+                      _placeFromLocalPosition(
+                        details.localPosition + rect.topLeft,
+                        rect,
+                      );
+                    },
+                    onPanUpdate: (details) {
+                      _placeFromLocalPosition(
+                        details.localPosition + rect.topLeft,
+                        rect,
+                      );
+                    },
+                  ),
+                ),
                 if (targetALocal != null)
                   _marker(
                     label: 'A',
@@ -769,9 +803,38 @@ class _InteractivePassTargetFieldViewState
                       color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.85),
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    child: Text(
-                      '${widget.model.targetAKey().keyLabel}: Target A   ${widget.model.targetBKey().keyLabel}: Target B',
-                      style: Theme.of(context).textTheme.labelMedium,
+                    child: Row(
+                      children: [
+                        Text(
+                          'Touch Target: ',
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                        const SizedBox(width: 4),
+                        ChoiceChip(
+                          label: const Text('A'),
+                          selected: _selectedTarget == PassTargetSelection.targetA,
+                          onSelected: (_) {
+                            setState(() {
+                              _selectedTarget = PassTargetSelection.targetA;
+                            });
+                          },
+                        ),
+                        const SizedBox(width: 6),
+                        ChoiceChip(
+                          label: const Text('B'),
+                          selected: _selectedTarget == PassTargetSelection.targetB,
+                          onSelected: (_) {
+                            setState(() {
+                              _selectedTarget = PassTargetSelection.targetB;
+                            });
+                          },
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          '(${widget.model.targetAKey().keyLabel}/${widget.model.targetBKey().keyLabel} keys)',
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                      ],
                     ),
                   ),
                 ),
