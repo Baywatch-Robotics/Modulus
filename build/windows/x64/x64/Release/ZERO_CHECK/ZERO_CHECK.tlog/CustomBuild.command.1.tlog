@@ -1,0 +1,10 @@
+^C:\USERS\GAVIN MOCERI\GITHUB\MODULUS-REAL\BUILD\WINDOWS\X64\CMAKEFILES\207233C96CB6E68256A04C26A1447308\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/Gavin Moceri/GitHub/Modulus-Real/windows" "-BC:/Users/Gavin Moceri/GitHub/Modulus-Real/build/windows/x64" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Gavin Moceri/GitHub/Modulus-Real/build/windows/x64/modulus.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

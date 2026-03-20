@@ -1,0 +1,10 @@
+^C:\USERS\GAVIN MOCERI\GITHUB\MODULUS-REAL\BUILD\WINDOWS\X64\CMAKEFILES\207233C96CB6E68256A04C26A1447308\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

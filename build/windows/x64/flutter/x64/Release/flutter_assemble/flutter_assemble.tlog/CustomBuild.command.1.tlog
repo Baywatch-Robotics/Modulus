@@ -1,0 +1,28 @@
+^C:\USERS\GAVIN MOCERI\GITHUB\MODULUS-REAL\BUILD\WINDOWS\X64\CMAKEFILES\C42696638D881368D72D3E9200474705\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env "FLUTTER_ROOT=C:\Users\Gavin Moceri\flutter" "PROJECT_DIR=C:\Users\Gavin Moceri\GitHub\Modulus-Real" "FLUTTER_ROOT=C:\Users\Gavin Moceri\flutter" "FLUTTER_EPHEMERAL_DIR=C:\Users\Gavin Moceri\GitHub\Modulus-Real\windows\flutter\ephemeral" "PROJECT_DIR=C:\Users\Gavin Moceri\GitHub\Modulus-Real" FLUTTER_TARGET=lib\main.dart DART_DEFINES=RkxVVFRFUl9WRVJTSU9OPTMuNDEuMg==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049OTA2NzNhNGVlZg==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NmMwYmFhZWJmNw==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMS4w DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=true "PACKAGE_CONFIG=C:\Users\Gavin Moceri\GitHub\Modulus-Real\.dart_tool\package_config.json" "C:/Users/Gavin Moceri/flutter/packages/flutter_tools/bin/tool_backend.bat" windows-x64 Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\GAVIN MOCERI\GITHUB\MODULUS-REAL\BUILD\WINDOWS\X64\CMAKEFILES\9446A4A56B68A3FFCFF5452328789437\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\GAVIN MOCERI\GITHUB\MODULUS-REAL\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/Gavin Moceri/GitHub/Modulus-Real/windows" "-BC:/Users/Gavin Moceri/GitHub/Modulus-Real/build/windows/x64" --check-stamp-file "C:/Users/Gavin Moceri/GitHub/Modulus-Real/build/windows/x64/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

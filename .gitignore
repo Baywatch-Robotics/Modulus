@@ -35,7 +35,7 @@ reports/
 .packages
 .pub-cache/
 .pub/
-/build/
+
 
 # Symbolication related
 app.*.symbols
